@@ -17,6 +17,20 @@ const awardVariants = {
     },
   },
 };
+const followVariants = {
+  initial: {
+    y: -100,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.2,
+    },
+  },
+};
 
 const Hero = () => {
   return (
@@ -82,32 +96,50 @@ const Hero = () => {
       </div>
       <div className="hSection right">
         {/* FOLLOW  */}
-        <motion.div className="follow">
-          <motion.a href="/">
+        <motion.div
+          variants={followVariants}
+          initial="initial"
+          animate="animate"
+          className="follow"
+        >
+          <motion.a variants={followVariants} href="/">
             <img src="/instagram.png" alt="instagram" />
           </motion.a>
-          <motion.a href="/">
+          <motion.a variants={followVariants} href="/">
             <img src="/facebook.png" alt="facebook" />
           </motion.a>
-          <motion.a href="/">
+          <motion.a variants={followVariants} href="/">
             <img src="/youtube.png" alt="youtube" />
           </motion.a>
-          <div className="followTextContainer">
+          <motion.div variants={followVariants} className="followTextContainer">
             <div className="followText">FOLLOW ME</div>
-          </div>
+          </motion.div>
         </motion.div>
         {/* BUBBLE */}
         <Speech />
         {/* CERTIFICATE */}
-        <div className="certificate">
+        <motion.div
+          className="certificate"
+          animate={{ opacity: [0, 1] }}
+          transition={{ duration: 1 }}
+        >
           <img src="/certificate.png" alt="certificate" />
           LAMA CERTIFICATED
           <br /> PROFESSIONAL
           <br /> UI DESIGNER
-        </div>
+        </motion.div>
         {/* CONTACT BUTTON */}
-        <a href="/#contact" className="contactLink">
-          <div className="contactButton">
+        <motion.a
+          href="/#contact"
+          className="contactLink"
+          animate={{ x: [200, 0], opacity: [0, 1] }}
+          transition={{ duration: 2 }}
+        >
+          <motion.div
+            className="contactButton"
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+          >
             <svg viewBox="0 0 200 200" width="150" height="150">
               <circle cx="100" cy="100" r="90" fill="pink" />
               <path
@@ -138,8 +170,8 @@ const Hero = () => {
                 <polyline points="9 6 18 6 18 15" />
               </svg>
             </div>
-          </div>
-        </a>
+          </motion.div>
+        </motion.a>
       </div>
       <div className="bg">
         <div className="hImg">

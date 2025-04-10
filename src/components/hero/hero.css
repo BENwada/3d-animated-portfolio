@@ -128,6 +128,7 @@
   padding: 24px;
   font-size: 18px;
   border-radius: 20px 20px 0px 20px;
+  overflow: hidden;
 }
 
 .bubbleContainer img {
@@ -180,4 +181,85 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 1536px) {
+  .hTitle {
+    font-size: 72px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .bg {
+    height: 60%;
+    top: auto;
+    bottom: 0;
+  }
+
+  .hImg {
+    height: 100%;
+  }
+
+  .hTitle {
+    font-size: 88px;
+  }
+
+  .awards {
+    width: 60%;
+  }
+
+  .bubbleContainer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .bg {
+    height: 50%;
+  }
+
+  .hTitle {
+    font-size: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+  .bg {
+    height: 60%;
+  }
+
+  .hSection {
+    width: 100%;
+  }
+
+  .hSection.left {
+    align-items: center;
+    text-align: center;
+    gap: 36px;
+  }
+
+  .hTitle {
+    font-size: 48px;
+  }
+
+  .awards {
+    width: 100%;
+  }
+
+  .awardList {
+    justify-content: center;
+  }
+
+  .hSection.right {
+    justify-content: end;
+  }
+
+  .follow,
+  .bubbleContainer,
+  .certificate {
+    display: none;
+  }
 }
